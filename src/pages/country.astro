@@ -206,7 +206,7 @@ const country = {
           <span class="font-semibold">Official Name:</span>
           {country.name.official}
         </p>
-        <p><span class="font-semibold">Capital:</span> {country.capital}</p>
+        <p><span class="font-semibold">Capital:</span> {country.capital[0]}</p>
         <p><span class="font-semibold">Region:</span> {country.region}</p>
         <p><span class="font-semibold">Subregion:</span> {country.subregion}</p>
         <p>
@@ -218,7 +218,7 @@ const country = {
         <ul class="list-disc list-inside">
           {
             Object.entries(country.currencies).map(([key, value]) => (
-              <li key={key}>
+              <li>
                 {value.name} ({value.symbol})
               </li>
             ))
@@ -249,7 +249,7 @@ const country = {
         <ul class="list-disc list-inside mb-4">
           {
             Object.entries(country.languages).map(([key, value]) => (
-              <li key={key}>{value}</li>
+              <li>{value}</li>
             ))
           }
         </ul>
@@ -262,7 +262,7 @@ const country = {
         <ul class="list-disc list-inside mb-4">
           {
             country.timezones.map((timezone, index) => (
-              <li key={index}>{timezone}</li>
+              <li>{timezone}</li>
             ))
           }
         </ul>
@@ -309,7 +309,7 @@ const country = {
         <ul class="list-disc list-inside mb-4">
           {
             Object.entries(country.borders).map(([key, value]) => (
-              <li key={key}>
+              <li>
                 <a
                   href={`https://prueba.com/${value}`}
                   class="hover:underline"
